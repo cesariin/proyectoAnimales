@@ -1,0 +1,39 @@
+﻿<Window x:Class="Mi_granjita.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mi_granjita"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <StackPanel.Background>
+            <ImageBrush ImageSource="/granjasguatemala_granjas_animalesgranja_soy502.jpg"/>
+        </StackPanel.Background>
+        <Button Width="100" Click="Button_Click">Agregar nuevo</Button>
+        <DataGrid Name="grilla" x:FieldModifier="public" AutoGenerateColumns="False" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Nombre del Animal" Binding="{Binding Nombre_del_Animal}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Especie" Binding="{Binding Especie}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Raza" Binding="{Binding Raza}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Crias" Binding="{Binding Crias}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Vacunas" Binding="{Binding Vacunas}"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="Acciones"></TextBlock>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button Content="Actualizar" Name="btnUpdate"></Button>
+                                <Button Content="Eliminar"  Name="btnDelete"></Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </StackPanel>
+</Window>
